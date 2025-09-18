@@ -54,3 +54,62 @@ round(sd_value, 3)
 
 # Question 2:
 
+# for Question 2 we need to install the BSDA library
+
+install.packages("BSDA")
+library(BSDA)
+
+
+# -----------
+# The known summary statistics from the scenario's problem:
+# n = sample size
+# sample_m = sample mean (kg)
+# sd = samples standart deviation
+# pop_m0 = company's claimed population mean (kg)
+# alpha = significance level
+# -----------
+n <- 50
+sample_m <- 1.48
+sample_sd <- 0.10
+pop_m0 <- 1.50
+alpha <- 0.05
+
+# Hypotheses:
+# h1: mu = pop_m0         - company's claim
+# h2: mu < pop_m1         - consumers suspect underfilling
+
+# perfoming on sample left tailed t summary test:
+tsum.test(mean.x = sample_m,
+                     s.x = sample_sd,
+                     n.x = n,
+                     mu = pop_m0,
+                     alternative = "less",
+                     conf.level = 1 - alpha)
+
+# Results of the summary t.test shows that: 
+# -----------
+# One-sample t-Test
+# data:  Summarized x
+# t = -1.4142, df = 49, p-value = 0.08181
+# alternative hypothesis: true mean is less than 1.5
+# 95 percent confidence interval:
+#  NA 1.50371
+#  sample estimates:
+#  mean of x 
+# 1.48 
+# quantile of the t-distribution = -1.677
+# -----------
+p_value = 0.08181
+round(p_value, 3)
+
+# critical t-value for left-tailed test at α = 0.05, df = n - 1:
+qt_val <- qt(alpha, df = n - 1)           # -1.676551
+round(qt_val,3)
+
+# Conclusion:
+# The calculated test statistic (t = -1.414) is greater than the critical value (t_crit = -1.676).
+# The p-value (0.082) is larger than α = 0.05.
+# Therefore, in the scenario’s t statistic is not extreme, so h0 is not rejected. 
+# Interpretation: there is not enough evidence to conclude that the average weight of
+# large rice bags is less than 1.5 kg. The observed difference (1.48 vs 1.50) can be
+# explained by normal sampling variation.
