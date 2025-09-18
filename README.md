@@ -12,11 +12,17 @@ They want to estimate the average weight of the small-sized rice bags they produ
 
 weights = [5.2, 4.9, 5.5, 5.0, 5.8, 5.3, 5.1, 5.6, 4.7, 5.4, 5.0, 5.7, 5.2, 5.1, 5.3, 5.0, 5.6, 5.2, 5.4, 5.5, 5.7, 5.1, 5.8, 5.0, 5.3, 5.6, 4.9, 5.5, 5.2]
 
-
-
-
-
 ________________
+
+## Left-tailed critical value for t-distribution
+![graph](https://github.com/valerijarudjko/data-analysis-rstudio/blob/main/Left-tailed%20critical%20value%20for%20t-distribution.png)
+- The curve represents the distribution of possible means x̄ assuming that H₀ is true (μ = μ₀ = 5.3 kg).
+- The light-shaded left region is the critical area for a significance level of α = 0.05, serving as the "strictness threshold": if our x̄ falls here, we reject H₀ (accepting a 5% risk of a false positive).
+- The dotted vertical line on the left indicates the critical limit (the boundary of the α area).
+- The shaded region up to the observed x̄ is the p-value (the area of the tail to the left of x̄).
+- If this area is ≤ α, we reject H₀; otherwise,we don't. 
+________________
+
 ## To do:
 1. Question
 
